@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class User implements java.io.Serializable{
 
@@ -21,6 +23,7 @@ public class User implements java.io.Serializable{
 	private String email;
 	private String phone;
 	private String password;
+	
 	
 	@OneToMany(mappedBy = "client")
 	private List<Order> orders = new ArrayList<>(); 
